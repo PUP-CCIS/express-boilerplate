@@ -1,0 +1,27 @@
+{
+  "name": "express-boilerplate",
+  "version": "1.0.0",
+  "description": "A quick and simple ExpressJS boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PUP-CCIS/express-boilerplate.git"
+  },
+  "keywords": [
+    "expressjs",
+    "boilerplate"
+  ],
+  "author": "Micah Andrew Bule",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PUP-CCIS/express-boilerplate/issues"
+  },
+  "homepage": "https://github.com/PUP-CCIS/express-boilerplate#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "pug": "^2.0.0-rc.2"
+  }
+}
