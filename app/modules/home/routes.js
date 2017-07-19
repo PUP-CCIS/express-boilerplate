@@ -14,11 +14,6 @@ var express = require('express');
 var router = express.Router();
 
 /**
- * Import the database module that is located in the lib directory, under app.
- */
-var db = require('../../lib/database')();
-
-/**
  * If you can notice, there's nothing new here except we're declaring the
  * route using the router, and not using app.use().
  */
@@ -35,6 +30,11 @@ router.get('/', (req, res) => {
          */
         return render([]);
     }
+
+    /**
+     * Import the database module that is located in the lib directory, under app.
+     */
+    var db = require('../../lib/database')();
 
     /**
      * If the database part is enabled, then use the database module to query
