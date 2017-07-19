@@ -17,6 +17,14 @@ var path = require('path');
 var bodyParser = require('body-parser');
 
 /**
+ * Load the 'serve-static' module. This basically serves the asset files
+ * (CSS and JS) that are required in the <head> tag. This can also serve
+ * other assets such as media files (photos, music, PDFs, etc.) stored on
+ * the server. Refer here: https://github.com/expressjs/serve-static
+ */
+var serveStatic = require('serve-static');
+
+/**
  * Export this module as a function accepting 'app', which is an
  * instance of an Express app defined from our main index file going through
  * the index of the 'app' directory, as the first parameter.
@@ -57,6 +65,12 @@ module.exports = app => {
      * Use 'morgan' middleware for HTTP logging purposes
      */
     app.use(morgan('dev'));
+
+    /**
+     * Use the 'serve-static' middleware to catch requests for asset files and serve
+     * them from the public folder. Notice the use of path.dirname()
+     */
+    app.use(serveStatic(path.join(path.dirname(path.dirname(__dirname)), 'public')));
 
     /**
      * Use 'body-parser' middleware to parse data coming from forms and other

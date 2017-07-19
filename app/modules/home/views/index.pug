@@ -1,7 +1,7 @@
-html
-    head
-        title Hello world!
-    
-    body
-        p Harkonen
-        a(href="/about") About
+extends ../../../templates/master.pug
+
+block content
+    h1 Users
+    ul
+        each user in users
+            li= `${user.id} - ${user.name} - ${user.age}`
