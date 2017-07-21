@@ -1,0 +1,15 @@
+//- This is how we extend a template using the 'extends' keyword
+extends ../../../templates/master.pug
+
+//- This is how we insert dynamic content to extended templates
+block content
+    form(method="POST" action="/users/new")
+        .field
+            .label Name
+            .control
+                input.input(type="text" placeholder="name" name="name")
+        .field
+            .label age
+            .control
+                input.input(type="number" placeholder="age" name="age")
+        input(type="submit" value="Submit")

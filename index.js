@@ -12,6 +12,12 @@ require('dotenv').config();
 var express = require('express');
 
 /**
+ * Load 'winston', an asynchronous logger, instead of the default console.
+ * Refer to: https://github.com/winstonjs/winston
+ */
+var winston = require('winston');
+
+/**
  * Here we are creating a new ExpressJS app
  */
 var app = express();
@@ -26,5 +32,5 @@ require('./app')(app);
  * This tells the app instance to listen to a certain port for any requests
  */
 app.listen(app.get('port'), () => {
-    console.log(`ExpressJS server listening to port ${app.get('port')}`);
+    winston.info(`ExpressJS server listening to port ${app.get('port')}`);
 });
