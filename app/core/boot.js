@@ -31,6 +31,12 @@ var serveStatic = require('serve-static');
 var methodOverride = require('method-override');
 
 /**
+ * Load the 'express-session' module so the application can utilize web
+ * sessions.
+ */
+var session = require('express-session');
+
+/**
  * Export this module as a function accepting 'app', which is an
  * instance of an Express app defined from our main index file going through
  * the index of the 'app' directory, as the first parameter.
@@ -77,6 +83,12 @@ module.exports = app => {
      * them from the public folder. Notice the use of path.dirname()
      */
     app.use(serveStatic(path.join(path.dirname(path.dirname(__dirname)), 'public')));
+
+    app.use(session({
+        resave: false,
+        saveUninitialized: true,
+        secret: 'WQcptX3p4W'
+    }));
 
     /**
      * Here we use methodOverride middleware to allow X-HTTP requests, as well as

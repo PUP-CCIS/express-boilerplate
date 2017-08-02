@@ -14,6 +14,17 @@ var express = require('express');
 var router = express.Router();
 
 /**
+ * Import the authentication middleware to check for the user object
+ * in the session.
+ */
+var authMiddleware = require('../auth/middlewares/auth');
+
+/**
+ * Use the middleware to check all routes registered for this router.
+ */
+router.use(authMiddleware.hasAuth);
+
+/**
  * If you can notice, there's nothing new here except we're declaring the
  * route using the router, and not using app.use().
  * 

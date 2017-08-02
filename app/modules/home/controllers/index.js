@@ -1,4 +1,5 @@
 module.exports = (req, res) => {
+    console.log(req.session);
     /**
      * This is a TEMPORARY checker if you want to enable the database part of
      * the app or not. In the .env file, there should be an ENABLE_DATABASE field

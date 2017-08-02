@@ -20,10 +20,6 @@ module.exports = app => {
      */
     require('./core/boot')(app);
 
-    /** Define the main index route of the app and what it should do */
-    var mainModule = process.env.MAIN.split('/');
-    app.use('/', require(`./modules/${mainModule[0]}/routes`)[mainModule[1]]); 
-
     /**
      * A variable to identify the directory of where the application modules
      * can be found.
@@ -50,5 +46,9 @@ module.exports = app => {
                 app.use(`/${route}`, routes[route]);
             });
         });
+
+        /** Define the main index route of the app and what it should do */
+        var mainModule = process.env.MAIN.split('/');
+        app.use('/', require(`./modules/${mainModule[0]}/routes`)[mainModule[1]]); 
     });
 }
