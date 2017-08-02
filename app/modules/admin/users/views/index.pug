@@ -5,7 +5,7 @@ block content
         span.fa.fa-users
         | &nbsp; Users
     
-    a.button.is-primary.pull-right(href="/users/add")
+    a.button.is-primary.pull-right(href="/admin/users/new")
         span.fa.fa-plus
         | &nbsp; Add User
     table.table.is-fullwidth
@@ -21,10 +21,10 @@ block content
             each user in users
                 tr
                     td= user.id
-                    td: a(href=`/users/${user.id}`)= user.name
+                    td: a(href=`/admin/users/${user.id}`)= user.name
                     td= user.age
                     td= user.email
                     td
-                        a(href=`/users/${user.id}/edit`): span.fa.fa-edit
+                        a(href=`/admin/users/${user.id}`): span.fa.fa-edit
                         | &nbsp;
-                        a(href=`/users/${user.id}/remove`): span.fa.fa-remove
+                        a(href=`/admin/users/${user.id}/remove`): span.fa.fa-remove
