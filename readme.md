@@ -1,5 +1,5 @@
 # Express Boilerplate
-A quick and simple ExpressJS boilerplate
+A quick and simple ExpressJS boilerplate 
 
 ## How to Install
 1. Fork this repository. The fork button should be at the upper right of this page. Fork it to your personal GitHub profiles. By doing so, you'll have a copy of the boilerplate in your respective profiles. To check, your URL should be like this: `https://github.com/your_username/express-boilerplate`
@@ -11,6 +11,10 @@ A quick and simple ExpressJS boilerplate
 4. After installing all the dependencies, open the `.env.sample` file and copy the contents of it. Create a new `.env` file and paste everything in there. The sample file has comments in it for each field present.
 
 5. Run the application using `node index.js` or `nodemon` if you have installed it (`npm install nodemon -g`).
+
+## Some useful links that may help you
+- [Git Basics](https://rogerdudler.github.io/git-guide/)
+- GitHub Basics ([Part 1](https://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1/))([Part 2](https://readwrite.com/2013/10/02/github-for-beginners-part-2/))
 
 ## Quirks
 
