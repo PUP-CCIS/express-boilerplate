@@ -8,5 +8,6 @@ router.get('/', (req, res) => {
 });
 
 router.use('/users', require('../admin/users/api'));
+router.use('/todos', require('./todos/api'));
 
 exports.api = router;
